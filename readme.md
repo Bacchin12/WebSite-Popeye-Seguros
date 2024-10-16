@@ -40,7 +40,7 @@
 ## 7. Desenvolvimento
 O projeto começou com a **identificação dos stakeholders**, que inclui o gerente da empresa e os usuários finais. Em seguida, foi realizada uma **entrevista** com o gerente e um levantamento orientado a ponto de vista, tanto com o desenvolvedor quanto com o gerente, para entender as necessidades específicas de cada parte.
 
-O software foi desenvolvido utilizando o **modelo incremental**, onde o desenvolvedor entregava os incrementos de cada etapa do projeto, recebendo feedback e aprovação do gerente. Alterações necessárias eram feitas ao longo do processo, até a finalização do sistema. Após a entrega, o desenvolvedor ficou encarregado de garantir a **funcionalidade** e a **manutenibilidade** do site.
+O Site foi desenvolvido utilizando o **modelo incremental**, onde o desenvolvedor entregava os incrementos de cada etapa do projeto, recebendo feedback e aprovação do gerente. Alterações necessárias eram feitas ao longo do processo, até a finalização do sistema. Após a entrega, o desenvolvedor ficou encarregado de garantir a **funcionalidade** e a **manutenibilidade** do site.
 
 ## 8. Resultados
 O projeto apresentou resultados muito satisfatórios, oferecendo uma experiência consistente e eficiente em todas as plataformas, garantindo **acessibilidade** e **rapidez** para os usuários.
