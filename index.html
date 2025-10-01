@@ -1,236 +1,1073 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Popeye Corretora de Seguros - Soluções personalizadas em seguros de saúde, vida, veículos, previdência privada e muito mais.">
+  <meta name="keywords" content="seguros, corretora, saúde, vida, veículos, previdência">
+  
+  <title>Popeye Corretora de Seguros</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #CA9E70;
+      --secondary-color: #162336;
+      --accent-color: #003366;
+      --text-light: #ffffff;
+      --text-dark: #333333;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
 
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script> 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/f90336ea62.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/js/all.min.js"></script>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <title>Popeye Corretora De Seguros</title>
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      scroll-behavior: smooth;
+    }
+
+    /* Header e Navegação */
+    .navbar {
+      background: linear-gradient(135deg, var(--primary-color) 0%, #b88a5a 100%);
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+    }
+
+    .navbar .container-fluid {
+      align-items: center;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-light) !important;
+      text-decoration: none;
+    }
+
+    .navbar-brand img {
+      width: 100px; 
+      height: 100px;
+      margin-right: 1rem;
+      border-radius: 50%;
+      transform: scale(1.3); 
+      transform-origin: left center; 
+      position: relative;
+      left: -10px; 
+    }
+
+    .navbar-nav {
+      margin-left: auto;
+    }
+
+    .nav-link {
+      color: var(--text-light) !important;
+      font-weight: 500;
+      padding: 0.5rem 1.5rem !important;
+      border-radius: 25px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Carousel Moderno */
+    .hero-carousel {
+      position: relative;
+      height: 70vh;
+      min-height: 500px;
+    }
+
+    .carousel-item {
+      height: 70vh;
+      min-height: 500px;
+      overflow: hidden;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.7);
+      transform: scale(1.02); /* Pequeno zoom para garantir cobertura total */
+    }
+
+    .carousel-caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 90%;
+      max-width: 800px;
+    }
+
+    .carousel-caption h5 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--text-light);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .carousel-caption p {
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      color: var(--text-light);
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+      margin-bottom: 2rem;
+      line-height: 1.4;
+    }
+
+    .btn-modern {
+      background: linear-gradient(45deg, #dc3545, #e85a6b);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      color: white;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+    }
+
+    .btn-modern:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
+      color: white;
+    }
+
+    /* Controles do Carousel */
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      background: rgba(255, 255, 255, 0.4);
+      opacity: 1;
+    }
+
+    .carousel-control-prev {
+      left: 2rem;
+    }
+
+    .carousel-control-next {
+      right: 2rem;
+    }
+
+    /* Seção de Apresentação */
+    .intro-section {
+      position: relative;
+      padding: 5rem 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+
+    .intro-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px var(--shadow);
+    }
+
+    .intro-content {
+      padding: 2rem;
+    }
+
+    .intro-content h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .intro-content p {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      margin-bottom: 2rem;
+      opacity: 0.8;
+    }
+
+    /* Seção de Serviços */
+    .services-section {
+      padding: 5rem 0;
+      background: var(--secondary-color);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      letter-spacing: 3px;
+    }
+
+    .section-title p {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      opacity: 0.7;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+      height: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card img {
+      height: 250px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .service-card .card-body {
+      padding: 2rem;
+    }
+
+    .service-card h5 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .service-card p {
+      color: var(--text-dark);
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    /* Parceiras */
+    .partners-section {
+      padding: 4rem 0;
+      background: #f8f9fa;
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .partner-logo {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 120px;
+    }
+
+    .partner-logo:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px var(--shadow);
+    }
+
+    .partner-logo img {
+      max-width: 100%;
+      max-height: 80px;
+      object-fit: contain;
+    }
+
+    /* Contato */
+    .contact-section {
+      background: var(--secondary-color);
+      padding: 4rem 0;
+      color: var(--text-light);
+    }
+
+    .contact-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-info i {
+      width: 30px;
+      color: var(--primary-color);
+      margin-right: 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.5rem;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .social-link.whatsapp { background: #25D366; }
+    .social-link.facebook { background: #1877F2; }
+    .social-link.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+    .social-link:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Animações de Entrada */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Media Queries Otimizadas */
+    @media (max-width: 768px) {
+      .navbar-brand {
+        font-size: 1.3rem;
+      }
+
+      .navbar-brand img {
+        width: 80px; 
+        height: 80px;
+        margin-right: 1rem;
+        border-radius: 50%;
+        transform: scale(1.3); 
+        transform-origin: left center; 
+        position: relative;
+        left: -10px;
+      }
+
+      .hero-carousel {
+        height: 60vh;
+        min-height: 400px;
+      }
+
+      .carousel-item {
+        height: 60vh;
+        min-height: 400px;
+        overflow: hidden;
+      }
+
+      .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transform: scale(1.02);
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 40px;
+        height: 40px;
+      }
+
+      .carousel-control-prev { left: 1rem; }
+      .carousel-control-next { right: 1rem; }
+
+      .intro-content h2 {
+        font-size: 2rem;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+
+      .partners-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .intro-section {
+        padding: 3rem 0;
+      }
+
+      .services-section {
+        padding: 3rem 0;
+      }
+
+      .contact-section {
+        padding: 3rem 0;
+      }
+    }
+
+    /* Loading Animation */
+    .loading {
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <nav class="navbar">
-
-    <div class="container-fluid">
-      <img src="popeye.png" alt="Logo" width="200" height="200" class="d-inline-block">
-      Popeye Corretora de Seguros
-    
-      <ul class="nav nav-pills justify-content-center fs-5">
-        <li class="nav-item">
-          <a class="nav-link active" href="#carouselExample">Novidades</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#servicos">Serviços</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#parceiras">Parceiras</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contato">Contato</a>
-        </li>
-      </ul>
+  <!-- Navegação -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <img src="popeye.png" alt="Logo Popeye Seguros">
+        Popeye Corretora de Seguros
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#servicos">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#parceiras">Parceiras</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contato">Contato</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+  <!-- Carousel Hero -->
+  <section id="home">
+    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+      <div class="carousel-inner">
+        
+        <div class="carousel-item active">
+          <img src="outubro.png" alt="Outubro - Mês Rosa!">
+          <div class="carousel-caption">
+            <h5 class="loading">Outubro: Mês Rosa!</h5>
+            <p class="loading">Neste mês de conscientização, cuidar da saúde é um ato de amor e proteção.</p>
+            <button type="button" class="btn btn-modern loading" onclick="scrollToSection('servico1')">
+              Saiba Mais
+            </button>
+          </div>
+        </div>
+        
+        <div class="carousel-item">
+          <img src="saude1.jpg" alt="Seguros Saúde">
+          <div class="carousel-caption">
+            <h5>Seguros Saúde</h5>
+            <p>As melhores opções de seguro para proteger você e todos que você mais ama</p>
+            <button type="button" class="btn btn-modern" onclick="scrollToSection('servico2')">
+              Saiba Mais
+            </button>
+          </div>
+        </div>
 
-      <div class="carousel-item active">
-        <img src="setembro.png" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-block custom-slide1">
-          <h5>Setembro: Mês de prevenção ao suicídio</h5> 
-          <p>Seguro é cuidar da vida em todos os aspcetos </p>
-          <button type="button"  href="#servico1" class="btn btn-primary butcustom2" id="saibaMaisBtn1">Saiba mais</button>
+        <div class="carousel-item">
+          <img src="mao2.jpg" alt="Seguros em Geral">
+          <div class="carousel-caption">
+            <h5>Seguros no Geral</h5>
+            <p>Carro, Moto, Caminhão, Vida, equipamentos, celular e notebook</p>
+            <button type="button" class="btn btn-modern" onclick="scrollToSection('servico3')">
+              Saiba Mais
+            </button>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="porco2.jpg" alt="Previdência Privada">
+          <div class="carousel-caption">
+            <h5>Previdência Privada</h5>
+            <p>Priorize seu planejamento financeiro agora mesmo</p>
+            <button type="button" class="btn btn-modern" onclick="scrollToSection('servico4')">
+              Saiba Mais
+            </button>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="carro2.jpg" alt="Financiamento de Veículos">
+          <div class="carousel-caption">
+            <h5>Financiamento de Veículos</h5>
+            <p>Realize o sonho do seu carro novo com as melhores condições</p>
+            <button type="button" class="btn btn-modern" onclick="scrollToSection('servico5')">
+              Saiba Mais
+            </button>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="moveis3.jpg" alt="Consórcio de Móveis e Imóveis">
+          <div class="carousel-caption">
+            <h5>Consórcio de Móveis e Imóveis</h5>
+            <p>Conquiste seus sonhos de forma planejada e segura</p>
+            <button type="button" class="btn btn-modern" onclick="scrollToSection('servico6')">
+              Saiba Mais
+            </button>
+          </div>
         </div>
       </div>
       
-      <div class="carousel-item">
-        <img src="saude1.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-block custom-slide2">
-          <h5>Seguros Saúde</h5>
-          <p>As melhores opções de seguro para proteger você e todos que você mais ama</p>
-          <button type="button"  href="#servico2" class="btn btn-primary butcustom" id="saibaMaisBtn2">Saiba mais</button>
-        </div>
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
 
-      <div class="carousel-item">
-        <img src="mao2.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-block custom-slide3">  
-          <h5>Seguros no Geral</h5>
-          <p>Carro, Moto, Caminhão, Vida, equipamentos, celular e notebook</p>
-          <button type="button"  href="#servico3" class="btn btn-primary butcustom" id="saibaMaisBtn3">Saiba mais</button>
+  <!-- Seção de Apresentação -->
+  <section class="intro-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 fade-in">
+          <img src="seguro.jpg" alt="Seguros Popeye" class="intro-image">
         </div>
-      </div>
-          
-      <div class="carousel-item">
-        <img src="porco2.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-block custom-slide5">
-          <h5>Previdência Privada</h5>
-          <p>Priorize seu planejamento financeiro agora mesmo</p>
-          <button type="button"  href="#servico4" class="btn btn-primary butcustom" id="saibaMaisBtn4">Saiba mais</button> 
-        </div>
-      </div>
-          
-      <div class="carousel-item">
-        <img src="carro2.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-block custom-slide4">
-          <h5>Financiamento de Veículos de Passeio</h5>
-          <p><p>
-          <button type="button"  href="#servico5" class="btn btn-primary butcustom1" id="saibaMaisBtn5">Saiba mais</button>
-        </div>
-      </div>
-          
-      <div class="carousel-item">
-        <img src="moveis3.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-block custom-slide3">
-          <h5>Consórcio de Móveis e Imóveis</h5>
-          <p></p>
-          <button type="button"  href="#servico6" class="btn btn-primary butcustom" id="saibaMaisBtn6">Saiba mais</button>
+        <div class="col-lg-6 fade-in">
+          <div class="intro-content">
+            <h2>Sua Segurança é Nossa Prioridade</h2>
+            <p>Somos uma corretora especializada em fornecer soluções personalizadas para proteger o que é mais importante para você. Com anos de experiência no mercado, oferecemos os melhores seguros com atendimento diferenciado.</p>
+            <a href="#contato" class="btn btn-modern">Falar com um Corretor</a>
+          </div>
         </div>
       </div>
     </div>
-        
-    <button class="carousel1" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel2" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+  </section>
 
-  <img src="seguro.jpg" class="img-fluid" alt="...">
+  <!-- Seção de Serviços -->
+  <section id="servicos" class="services-section">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>Nossos Serviços</h2>
+        <p>Soluções completas em seguros para sua tranquilidade</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 fade-in">
+          <div id="servico1" class="service-card">
+            <img src="outubro1.jpg" alt="Outubro - Mês Rosa!">
+            <div class="card-body">
+              <h5>Outubro - Mês Rosa!</h5>
+              <p>Outubro é marcado pelo Outubro Rosa, uma campanha que reforça a importância da prevenção e do cuidado com a saúde da mulher. Na <b>Popeye Seguros</b>, acreditamos que proteger a vida vai muito além de momentos de emergência — é valorizar cada detalhe, cada escolha e cada cuidado diário. Assim como a campanha nos inspira a cuidar da saúde, nossos seguros existem para trazer segurança e tranquilidade em todas as fases da vida. Neste mês, celebre a força, a prevenção e a proteção daquilo que mais importa: a vida.</p>
+              <a href="#contato" class="btn btn-modern">Falar com um Corretor</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 fade-in">
+          <div id="servico2" class="service-card">
+            <img src="saude22.jpg" alt="Seguros Saúde">
+            <div class="card-body">
+              <h5>Seguros Saúde</h5>
+              <p>A Popeye Seguros oferece uma ampla gama de seguros saúde, abrangendo <strong>planos odontológicos, planos de saúde e planos de saúde pet.</strong> Garantindo cobertura completa para você e sua família.</p>
+              <a href="#contato" class="btn btn-modern">Falar com um Corretor</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 fade-in">
+          <div id="servico3" class="service-card">
+            <img src="vida.jpg" alt="Seguros em Geral">
+            <div class="card-body">
+              <h5>Seguros no Geral</h5>
+              <p>Oferecemos uma variedade de seguros, incluindo coberturas para <strong>moto, carro, caminhão, vida, equipamentos, celular e notebook.</strong> Proteção completa para todos os aspectos da sua vida.</p>
+              <a href="#contato" class="btn btn-modern">Falar com um Corretor</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 fade-in">
+          <div id="servico4" class="service-card">
+            <img src="privada.jpg" alt="Previdência Privada">
+            <div class="card-body">
+              <h5>Previdência Privada</h5>
+              <p>Oferecemos soluções em previdência privada para seu <strong>planejamento financeiro</strong> de longo prazo. Opções personalizadas para construir um futuro financeiramente seguro.</p>
+              <a href="#contato" class="btn btn-modern">Falar com um Corretor</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 fade-in">
+          <div id="servico5" class="service-card">
+            <img src="passeio.jpg" alt="Financiamento de Veículos">
+            <div class="card-body">
+              <h5>Financiamento de Veículos de Passeio</h5>
+              <p>Oferecemos <strong>financiamento de veículos de passeio</strong> com condições flexíveis e planos adaptados às suas necessidades. Tornamos a compra do seu carro mais acessível.</p>
+              <a href="#contato" class="btn btn-modern">Falar com um Corretor</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 fade-in">
+          <div id="servico6" class="service-card">
+            <img src="moveis1.jpg" alt="Consórcio">
+            <div class="card-body">
+              <h5>Consórcio de Móveis e Imóveis</h5>
+              <p>Oferecemos consórcios de móveis e imóveis. <strong>Consórcios de móveis</strong> para bens como móveis e eletrodomésticos, e <strong>consórcios de imóveis</strong> para realizar o sonho da casa própria.</p>
+              <a href="#contato" class="btn btn-modern">Falar com um Corretor</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Parceiras -->
+  <section id="parceiras" class="partners-section">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2 style="color: var(--secondary-color);">Seguradoras Parceiras</h2>
+        <p style="color: var(--text-dark); opacity: 0.7;">Conheça as seguradoras que confiam em nossos serviços</p>
+      </div>
+
+      <div class="partners-grid fade-in">
+        <div class="partner-logo"><img src="akad.png" alt="Akad Seguros"></div>
+        <div class="partner-logo"><img src="aliro.png" alt="Aliro Seguros"></div>
+        <div class="partner-logo"><img src="all.png" alt="All Seguros"></div>
+        <div class="partner-logo"><img src="amil.jpeg" alt="Amil"></div>
+        <div class="partner-logo"><img src="azul.png" alt="Azul Seguros"></div>
+        <div class="partner-logo"><img src="bra.png" alt="Bradesco Seguros"></div>
+        <div class="partner-logo"><img src="gdi.png" alt="GDI Seguros"></div>
+        <div class="partner-logo"><img src="hdi.png" alt="HDI Seguros"></div>
+        <div class="partner-logo"><img src="itau.png" alt="Itaú Seguros"></div>
+        <div class="partner-logo"><img src="itu.png" alt="Itu Seguros"></div>
+        <div class="partner-logo"><img src="lib.jpg" alt="Liberty Seguros"></div>
+        <div class="partner-logo"><img src="mag.png" alt="MAG Seguros"></div>
+        <div class="partner-logo"><img src="mapfre.png" alt="Mapfre"></div>
+        <div class="partner-logo"><img src="porto.png" alt="Porto Seguros"></div>
+        <div class="partner-logo"><img src="som.jpeg" alt="SOM Seguros"></div>
+        <div class="partner-logo"><img src="suh.png" alt="SUH Seguros"></div>
+        <div class="partner-logo"><img src="sul.png" alt="Sul América"></div>
+        <div class="partner-logo"><img src="tokio.png" alt="Tokio Marine"></div>
+        <div class="partner-logo"><img src="zu.jpg" alt="Zurich"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Contato -->
+  <section id="contato" class="contact-section">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>Entre em Contato</h2>
+        <p>Fale conosco para obter mais informações sobre nossos serviços</p>
+      </div>
+
+      <div class="row justify-content-center fade-in">
+        <div class="col-lg-8">
+          <div class="text-center">
+            <div class="contact-info">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>R. Guaicurus, 195 - Nova Americana, Americana - SP, 13466-100</span>
+            </div>
+            
+            <div class="contact-info">
+              <i class="fas fa-envelope"></i>
+              <span>popeyecorretoradeseguros@gmail.com</span>
+            </div>
+            
+            <div class="contact-info">
+              <i class="fas fa-phone"></i>
+              <span>(19) 98902-0702</span>
+            </div>
+
+            <div class="social-links">
+              <a href="https://api.whatsapp.com/send?phone=5519989020702" class="social-link whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="https://www.facebook.com/popeyeseguros" class="social-link facebook" target="_blank" rel="noopener" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/popeyecorretoradeseguros" class="social-link instagram" target="_blank" rel="noopener" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+
+            <p style="margin-top: 2rem; opacity: 0.6; font-size: 0.9rem;">
+              Imagens de <a href="https://br.freepik.com/" target="_blank" style="color: var(--primary-color);">freepik.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   
-  <div class="card-body1">
-    <p class="card-text">A Corretora de Seguros especializada em fornecer soluções personalizadas para proteger o que é mais importante para você. </p>
-    <a href="#contato" class="bt btn btn-danger">Falar com um corretor</a>
-  </div>
-        
-  <div id = "servicos" class="row row-cols-1 row-cols-md-2 g-4">
+  <script>
+    // Smooth scrolling para navegação
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
 
-    <div class="col">
-      <div class="card1">
-        <img id = "servico1" src="setembro2.jpg" id= "servico1" class="card-img-top" alt="...">
-        <div id = "servico1" class="card-body">
-          <h5 class="card-title1">Setembro Amarelo</h5>
-          <p class="card-text1">No Setembro Amarelo, o mês dedicado à conscientização sobre a prevenção ao suicídio, queremos lembrar que cuidar da vida vai muito além da proteção física e financeira. É preciso olhar para dentro, cuidar do coração e da mente. Estamos aqui para te apoiar em todas as etapas da sua jornada. Seja através dos nossos <b>seguros de vida</b>, ou <b>saúde</b>, ou com palavras de incentivo, queremos que você se sinta seguro em todos os aspectos da sua vida.</p>
-          <p class="card-text1">Cuide de você. Cuide da sua mente. E <b>conte com a gente para cuidar do resto</b></p>
-          <a href="#contato" class="btn btn-danger">Falar com um corretor</a>
-        </div>
-      </div>
-    </div>
+    // Função para scroll to section (usada nos botões do carousel)
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
 
-    <div class="col">
-      <div class="card1">
-        <img  id = "servico2" src="saude22.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title1">Seguros Saúde</h5>
-          <p  class="card-text1">A Popeye Seguros oferece uma ampla gama de seguros saúde, abrangendo <b>planos odontológicos, planos de saúde e planos de saúde pet.</b> Essas opções visam garantir a saúde e o bem-estar abrangentes, proporcionando cobertura para despesas médicas, consultas odontológicas e cuidados veterinários.</p>
-          <a href="#contato" class="btn btn-danger">Falar com um corretor</a>
-        </div>
-      </div>
-    </div>
-        
-    <div class="col">
-      <div class="card1">
-        <img id = "servico3" src="vida.jpg" class="card-img-top" alt="...">
-        <div  class="card-body">
-          <h5 class="card-title1">Seguros no Geral</h5>
-          <p class="card-text1">A Popeye Seguros oferece uma variedade de seguros, incluindo coberturas para <b>moto, carro, caminhão, vida, equipamentos, celular e notebook.</b> Essa ampla gama de opções visa atender às diversas necessidades dos clientes, proporcionando segurança e tranquilidade em diferentes aspectos de suas vidas.</p>
-          <a href="#contato" class="btn btn-danger">Falar com um corretor</a>
-        </div>
-      </div>
-    </div>
-        
-    <div class="col">
-      <div class="card1">
-        <img id = "servico4" src="privada.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title1">Previdência Privada</h5>
-          <p class="card-text1">A Popeye também oferece soluções em previdência privada, visando o <b>planejamento financeiro</b> de longo prazo de seus clientes. Com opções personalizadas, os planos de previdência privada proporcionam uma estratégia eficaz para a construção de um futuro financeiramente seguro.</p>
-          <a href="#contato" class="btn btn-danger">Falar com um corretor</a>
-        </div>
-      </div>
-    </div>
-        
-    <div class="col">
-      <div class="card1">
-        <img id = "servico5" src="passeio.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title1">Financiamento de Veículos de Passeio</h5>
-          <p class="card-text1">A Popeye oferece serviços de <b>financiamento de veículos de passeio</b>, proporcionando aos clientes uma opção conveniente para a aquisição de seus automóveis. Com condições flexíveis e planos adaptados às necessidades individuais, a corretora busca simplificar o processo de compra de veículos, tornando-o acessível e personalizado.</p>
-          <a href="#contato" class="btn btn-danger">Falar com um corretor</a>
-        </div>
-      </div>
-    </div>
+    // Animação de fade-in quando elementos entram na viewport
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
 
-    <div class="col">
-      <div class="card1">
-        <img id = "servico6" src="moveis1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title1">Consórcio de Móveis e Imóveis</h5>
-          <p class="card-text1">Além dos seguros, a Popeye também oferece opções de consórcios, abrangendo os consórcios de móveis e de imóveis. <b>Os consórcios de móveis</b> proporcionam aos clientes a oportunidade de adquirir bens como móveis e eletrodomésticos de maneira planejada e acessível. Já <b>os consórcios de imóveis</b> permitem a realização do sonho da casa própria.</p>
-          <a href="#contato" class="btn btn-danger">Falar com um corretor</a>
-        </div>
-      </div>
-    </div>  
-  </div>
-  
-  <figure class="text-center">
-    <blockquote id = "parceiras" class="text3">
-      <p>Seguradoras Parceiras</p>
-    </blockquote>
-    <figcaption class="blockquote1">
-      Conheça as Seguradoras que confiam em nossos serviços
-    </figcaption>
-  </figure> 
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
 
-  <img src="akad.png" class="img-thumbnail" alt="...">
-  <img src="aliro.png" class="img-thumbnail" alt="...">
-  <img src="all.png" class="img-thumbnail" alt="...">
-  <img src="amil.jpeg" class="img-thumbnail" alt="...">
-  <img src="azul.png" class="img-thumbnail" alt="...">
-  <img src="bra.png" class="img-thumbnail" alt="...">
-  <img src="gdi.png" class="img-thumbnail" alt="...">
-  <img src="hdi.png" class="img-thumbnail" alt="...">
-  <img src="itau.png" class="img-thumbnail" alt="...">
-  <img src="itu.png" class="img-thumbnail" alt="...">
-  <img src="lib.jpg" class="img-thumbnail" alt="...">
-  <img src="mag.png" class="img-thumbnail" alt="...">
-  <img src="mapfre.png" class="img-thumbnail" alt="...">
-  <img src="porto.png" class="img-thumbnail" alt="...">
-  <img src="som.jpeg" class="img-thumbnail" alt="...">
-  <img src="suh.png" class="img-thumbnail" alt="...">
-  <img src="sul.png" class="img-thumbnail" alt="...">
-  <img src="tokio.png" class="img-thumbnail" alt="...">
-  <img src="zu.jpg" class="img-thumbnail" alt="...">
-    
-  <div id="contato" class= "contato"> 
-    <p class="text-center2">CONTATO</p>
-    <p class="text-center3">Entre em contato conosco para obter mais informações sobre nossos serviços</p>
-    <p class= "text5"><i class="fas fa-map-marker-alt"></i> Endereço: R. Guaicurus, 195 - Nova Americana, Americana - SP, 13466-100</p>
-    <p class= "text5"><i class="fas fa-envelope"></i> E-mail: popeyecorretoradeseguros@gmail.com</p>
-    <p class= "text5"><i class="fas fa-phone"></i> Telefone: (19) 98902-0702</p>   
-          
-    <div class="d-flex justify-content-center">
-      <a href="https://api.whatsapp.com/send?phone=5519989020702" target="_blank" rel="noopener noreferrer" >
-        <i class="fab fa-whatsapp whatsapp-icon"></i>
-      </a>
-      <a href="https://www.facebook.com/popeyeseguros" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-facebook-f facebook-icon"></i>
-      </a>
-      <a href="https://www.instagram.com/popeyecorretoradeseguros" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-instagram instagram-icon"></i>
-      </a>
-    </div>
-  </div>       
+    // Observar todos os elementos com classe fade-in
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Atualizar link ativo na navegação durante scroll
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Preloader simples
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+      
+      // Iniciar animações de loading
+      document.querySelectorAll('.loading').forEach((el, index) => {
+        setTimeout(() => {
+          el.style.animationDelay = `${index * 0.2}s`;
+          el.style.opacity = '1';
+        }, index * 200);
+      });
+    });
+
+    // Melhorar performance do carousel
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.querySelector('#heroCarousel');
+      if (carousel) {
+        // Pausar carousel quando não está visível
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const carouselInstance = bootstrap.Carousel.getInstance(carousel);
+            if (carouselInstance) {
+              if (entry.isIntersecting) {
+                carouselInstance.cycle();
+              } else {
+                carouselInstance.pause();
+              }
+            }
+          });
+        });
+        observer.observe(carousel);
+      }
+    });
+
+    // Adicionar loading state aos botões
+    document.querySelectorAll('.btn-modern').forEach(btn => {
+      btn.addEventListener('click', function() {
+        if (this.getAttribute('href') || this.getAttribute('onclick')) {
+          this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Carregando...';
+          setTimeout(() => {
+            this.innerHTML = 'Saiba Mais';
+          }, 1000);
+        }
+      });
+    });
+
+    // Lazy loading para imagens
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src || img.src;
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+
+      document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+
+    // Adicionar efeito de ripple aos botões
+    document.querySelectorAll('.btn-modern').forEach(button => {
+      button.addEventListener('click', function(e) {
+        let ripple = document.createElement('span');
+        let rect = this.getBoundingClientRect();
+        let size = Math.max(rect.width, rect.height);
+        let x = e.clientX - rect.left - size / 2;
+        let y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+
+    // Analytics simples (opcional)
+    function trackEvent(action, label) {
+      console.log(`Event: ${action}, Label: ${label}`);
+      // Aqui você pode integrar com Google Analytics ou outro serviço
+    }
+
+    // Rastrear cliques nos botões de contato
+    document.querySelectorAll('a[href="#contato"], .btn-modern').forEach(btn => {
+      btn.addEventListener('click', () => {
+        trackEvent('click', 'contact_button');
+      });
+    });
+
+    // Rastrear cliques nas redes sociais
+    document.querySelectorAll('.social-link').forEach(link => {
+      link.addEventListener('click', () => {
+        trackEvent('click', `social_${link.classList[1]}`);
+      });
+    });
+  </script>
+
+  <style>
+    /* Estilos adicionais para animações */
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(0);
+      animation: ripple-animation 0.6s ease-out;
+      pointer-events: none;
+    }
+
+    @keyframes ripple-animation {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    .lazy {
+      filter: blur(5px);
+      transition: filter 0.3s;
+    }
+
+    .loaded .loading {
+      animation: slideInUp 0.8s ease-out forwards;
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Melhorias adicionais de responsividade */
+    @media (max-width: 480px) {
+      .navbar-brand {
+        font-size: 1.1rem;
+      }
+      
+      .carousel-caption h5 {
+        font-size: 1.8rem;
+      }
+      
+      .carousel-caption p {
+        font-size: 1rem;
+      }
+      
+      .service-card .card-body {
+        padding: 1.5rem;
+      }
+      
+      .contact-info {
+        font-size: 0.9rem;
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .contact-info i {
+        margin-bottom: 0.5rem;
+      }
+      
+      .social-links {
+        gap: 1rem;
+      }
+      
+      .social-link {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Melhorias de acessibilidade */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      .carousel-item {
+        transition: none !important;
+      }
+    }
+
+    /* Focus states melhorados */
+    .nav-link:focus,
+    .btn-modern:focus,
+    .social-link:focus {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+
+    /* Indicadores de loading */
+    .btn-modern.loading {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    /* Hover effects melhorados */
+    .service-card:hover img {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+
+    .partner-logo:hover {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+
+    /* Print styles */
+    @media print {
+      .navbar,
+      .carousel-control-prev,
+      .carousel-control-next,
+      .social-links {
+        display: none !important;
+      }
+      
+      .service-card {
+        break-inside: avoid;
+      }
+    }
+  </style>
 </body>
 </html>
